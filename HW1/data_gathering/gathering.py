@@ -160,6 +160,7 @@ def stats_of_data():
     data_non_zero_rating = data[data['rating'] > 0.000]
     data_rating_more_six = data[data['rating'] >= 6.000]
     data_non_zero_duration = data[data['duration_min'] > 0]
+    data_director_is_present = data[data['director'] != ""]
 
     # разбиение фильмов по годам (сколько фильмов было каждый год)
     print('Количество фильмов по годам:')
@@ -187,6 +188,18 @@ def stats_of_data():
     print(data_non_zero_duration.groupby(['year'])['duration_min'].mean())
     print("Max:")
     print(data_non_zero_duration.groupby(['year'])['duration_min'].max())
+
+    # множество режиссёров (без повторений)
+    print("Режиссёры фильмов")
+    directors = set(data_director_is_present['director'])
+    print("Общее количество режиссёров")
+    print(len(directors))
+    print("Первые 15 режиссёров, у которых больше одного фильма в списке")
+    data_group_by_director = data_director_is_present.groupby(['director'])
+    count_film_by_director = data_group_by_director['name_rus'].count().reset_index(name="count")
+
+    print(count_film_by_director[count_film_by_director['count'] > 1][['director', 'count']].sort_values(by=['count'], ascending = [0]).head(15))
+
 
 def main():
     print("Hello")
