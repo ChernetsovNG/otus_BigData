@@ -123,6 +123,7 @@ pep8 .
 
 import logging
 import sys
+import pandas as pd
 
 from scrappers.scrapper import Scrapper
 from storages.file_storage import FileStorage
@@ -146,11 +147,11 @@ def gather_process():
 
 def convert_data_to_table_format():
     logger.info("transform")
-
-    # Your code here
-    # transform gathered data from txt file to pandas DataFrame and save as csv
-    pass
-
+    # Читаем данные из .txt файла и сохраняем в .csv файле
+    data = pd.read_csv(SCRAPPED_FILE, sep="\t")
+    data.columns = ["name_rus", "name_eng", "duration_min", "year", "director", "main_actors", "rating", "vote_count"]
+    data.to_csv(TABLE_FORMAT_FILE, sep='\t')
+    print(data.info())
 
 def stats_of_data():
     logger.info("stats")
@@ -172,12 +173,8 @@ if __name__ == '__main__':
     logger.info("Work started")
 
     gather_process()
+    convert_data_to_table_format()
 
-    # if sys.argv[1] == 'gather':
-    #     gather_process()
-    #
-    # elif sys.argv[1] == 'transform':
-    #     convert_data_to_table_format()
     #
     # elif sys.argv[1] == 'stats':
     #     stats_of_data()
