@@ -15,7 +15,7 @@ class Scrapper(object):
         # loading files
         # Загружаем первую страницу
         from_year = 2012
-        to_year = 2018
+        to_year = 2017
 
         page = 1
         data = self.load_films_list(from_year, to_year, page, s)
@@ -45,7 +45,7 @@ class Scrapper(object):
             for raw in results:
                 dict_writer.writerow(raw)
 
-
+    # Определение кол-ва страниц в результатах поиска
     def get_page_count(self, data):
         soup = BeautifulSoup(data)
         result = soup.find("span", {"class": "search_results_topText"})  # сколько всего найдено результатов (их по 100 на каждой странице)
@@ -53,6 +53,7 @@ class Scrapper(object):
         pages_count = films_count//100 + 1
         return pages_count
 
+    # Загрузить список фильмов для одной страницы
     def load_films_list(self, from_year, to_year, page, session):
         # Фильмы США с рейтингом R с одного года по другой
         url = 'https://www.kinopoisk.ru/s/type/film/list/1/order/rating/m_act%%5Bfrom_year%%5D/%d/m_act%%5Bto_year%%5D/%d' \
@@ -60,6 +61,7 @@ class Scrapper(object):
         request = session.get(url)
         return request.text
 
+    # Получить словарь с информацией о фильмах
     def get_films_info(self, data):
         results = []
         soup = BeautifulSoup(data)
@@ -124,48 +126,3 @@ class Scrapper(object):
             })
 
         return results
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

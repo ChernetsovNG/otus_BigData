@@ -124,6 +124,7 @@ pep8 .
 import logging
 import sys
 import pandas as pd
+import numpy as np
 
 from scrappers.scrapper import Scrapper
 from storages.file_storage import FileStorage
@@ -149,17 +150,43 @@ def convert_data_to_table_format():
     logger.info("transform")
     # Читаем данные из .txt файла и сохраняем в .csv файле
     data = pd.read_csv(SCRAPPED_FILE, sep="\t")
-    data.columns = ["name_rus", "name_eng", "duration_min", "year", "director", "main_actors", "rating", "vote_count"]
     data.to_csv(TABLE_FORMAT_FILE, sep='\t')
-    print(data.info())
 
 def stats_of_data():
     logger.info("stats")
+    data = pd.read_csv(TABLE_FORMAT_FILE, sep="\t")
+    print(data.info())  # общая информация о данных
 
-    # Your code here
-    # Load pandas DataFrame and print to stdout different statistics about the data.
-    # Try to think about the data and use not only describe and info.
-    # Ask yourself what would you like to know about this data (most frequent word, or something else)
+    data_non_zero_rating = data[data['rating'] > 0.000]
+    data_rating_more_six = data[data['rating'] >= 6.000]
+    data_non_zero_duration = data[data['duration_min'] > 0]
+
+    # разбиение фильмов по годам (сколько фильмов было каждый год)
+    print('Количество фильмов по годам:')
+    print(data.groupby(['year'])['name_rus'].count())
+
+    print('Количество фильмов с рейтингом >= 6.0 по годам:')
+    print(data_rating_more_six.groupby(['year'])['name_rus'].count())
+
+    # средний рейтинг фильмов данной категории (R) по годам
+    print('Средний рейтинг фильмов по годам (не учитываем фильмы с невыставленным рейтингом)')
+
+    print(data_non_zero_rating.groupby('year', as_index=False)['rating'].mean())
+
+    # среднее количество голосов за фильмы с рейтингом
+    print('Среднее количество голосов за фильмы с рейтингом (не учитываем фильмы с невыставленным рейтингом)')
+    print(data_non_zero_rating.groupby('year', as_index=False)['vote_count'].mean())
+    print('Среднее количество голосов за фильмы с рейтингом >= 6.0 (не учитываем фильмы с невыставленным рейтингом)')
+    print(data_rating_more_six.groupby('year', as_index=False)['vote_count'].mean())
+
+    # продолжительность фильмов
+    print("Минимальная, максимальная и средняя продолжительность фильмов (в минутах)")
+    print("Min:")
+    print(data_non_zero_duration.groupby(['year'])['duration_min'].min())
+    print("Average:")
+    print(data_non_zero_duration.groupby(['year'])['duration_min'].mean())
+    print("Max:")
+    print(data_non_zero_duration.groupby(['year'])['duration_min'].max())
 
 def main():
     print("Hello")
@@ -174,9 +201,6 @@ if __name__ == '__main__':
 
     gather_process()
     convert_data_to_table_format()
-
-    #
-    # elif sys.argv[1] == 'stats':
-    #     stats_of_data()
+    stats_of_data()
 
     logger.info("work ended")
