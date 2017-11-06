@@ -61,8 +61,9 @@ def get_page_count(data):
 # Загрузить список фильмов для одной страницы
 def load_films_list(from_year, to_year, page, session):
     # Фильмы США с рейтингом R с одного года по другой
-    url = 'https://www.kinopoisk.ru/s/type/film/list/1/order/rating/m_act%%5Bfrom_year%%5D/%d/m_act%%5Bto_year%%5D/%d' \
-          '/m_act%%5Bcountry%%5D/1/m_act%%5Bmpaa%%5D/R/m_act%%5Btype%%5D/film/page/%d/' % (from_year, to_year, page)
+    url = "https://www.kinopoisk.ru/s/type/film/list/1/order/rating/m_act%5Bfrom_year%5D/{from_year}/m_act%5B" \
+          "to_year%5D/{to_year}/m_act%5Bcountry%5D/1/m_act%5Bmpaa%5D/R/m_act%5Btype%5D/film/page/{page}/" \
+        .format(from_year=from_year, to_year=to_year, page=page)
     request = session.get(url)
     return request.text
 
