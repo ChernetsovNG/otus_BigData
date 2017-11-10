@@ -1,0 +1,5 @@
+.idea
+*.pyc
+*~
+/extract/
+/raw_data.csv
