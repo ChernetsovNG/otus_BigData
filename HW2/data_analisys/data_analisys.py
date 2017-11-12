@@ -56,7 +56,7 @@ def write_csv_file(data_points):
 
 
 if __name__ == '__main__':
-    # extract_files()
-    # all_data_points = get_all_data_points()
-    # write_csv_file(all_data_points)
+    extract_files()
+    all_data_points = get_all_data_points()
+    write_csv_file(all_data_points)
     print("Hello!")
