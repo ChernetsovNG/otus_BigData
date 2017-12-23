@@ -1,3 +1,6 @@
 HW1/data_gathering/scrappers/__pycache__/
 HW1/data_gathering/storages/__pycache__/
 */.idea
+HW8/train.tsv
+HW8/test.tsv
+HW8/sample_submission.csv
