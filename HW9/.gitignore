@@ -112,3 +112,4 @@ venv.bak/
 /data/users_posts.tar.gz
 /data/users_id.json
 /data/users_info.json
+/vectorizer.pk
