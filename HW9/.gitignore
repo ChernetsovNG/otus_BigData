@@ -113,3 +113,4 @@ venv.bak/
 /data/users_id.json
 /data/users_info.json
 /vectorizer.pk
+/learning/*
