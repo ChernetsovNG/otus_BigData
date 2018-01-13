@@ -40,6 +40,8 @@ class VKApiConnector(object):
     __users_id_age = {}
     __users_info = {}
     __users_posts = {}
+    __users_additional = {}
+    __users_status = {}
 
     @classmethod
     def config(cls, version, client_id, token, sleep_time=1):
@@ -203,6 +205,44 @@ class VKApiConnector(object):
         except Exception as ex:
             logger.exception(ex)
 
+    # получаем дополнительные параметры для пользователей
+    @classmethod
+    def get_random_users_additional(cls, bot, chat_id):
+        try:
+            # берём уже собранные ранее id пользователей
+            with open("data/users_id.json", "r") as file1:
+                users_id_age = json.load(file1)
+            users_id = list(users_id_age.keys())
+            random_users_id_chunks = cls.__chunks(users_id, 1000)
+            for chunk in random_users_id_chunks:
+                users_additional = cls.__get_users_additional(chunk)
+                if users_additional is not None:
+                    for user_additional in users_additional:
+                        cls.__users_additional[user_additional['id']] = user_additional
+
+            bot.send_message(chat_id=chat_id,
+                             text='OK. I got additional data (interests, movies, music, tv) for ' + str(len(cls.__users_additional)) + ' random VK users')
+        except Exception as ex:
+            logger.exception(ex)
+
+    @classmethod
+    def __get_users_additional(cls, users_ids):
+        request_params = cls.__get_base_params()
+        request_params['user_ids'] = ",".join(users_ids)
+        request_params['fields'] = 'interests,movies,music,tv'
+
+        url = '{}{}'.format(cls.__base_url, cls.__users_get_method)
+
+        try:
+            response = requests.post(url, encoded_dict(request_params) if request_params else None)
+            if not response.ok:
+                logger.error(response.text)
+                return None
+            else:
+                return response.json()['response']
+        except Exception as ex:
+            logger.exception(ex)
+
     @classmethod
     def resolve_screen_name(cls, screen_name):
         try:
@@ -265,6 +305,20 @@ class VKApiConnector(object):
                     raise
         file = open(filename, 'w+')
         json.dump(cls.__users_info, file)
+        return filename
+
+    @classmethod
+    def save_users_additional(cls):
+        home = str(Path.home())
+        filename = home + '/VKApi/users_additional.json'
+        if not os.path.exists(os.path.dirname(filename)):
+            try:
+                os.makedirs(os.path.dirname(filename))
+            except OSError as exc:  # Guard against race condition
+                if exc.errno != errno.EEXIST:
+                    raise
+        file = open(filename, 'w+')
+        json.dump(cls.__users_additional, file)
         return filename
 
     @classmethod

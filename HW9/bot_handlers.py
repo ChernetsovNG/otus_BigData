@@ -24,11 +24,16 @@ def command(bot, update):
         VKApiConnector.get_random_users_info(bot, update.message.chat_id)
     elif receive_command == '/get_users_posts':
         VKApiConnector.get_random_users_posts(bot, update.message.chat_id)
+    elif receive_command == '/get_users_additional':
+        VKApiConnector.get_random_users_additional(bot, update.message.chat_id)
     elif receive_command == '/save_users_id':
         filename = VKApiConnector.save_users_id()
         bot.send_message(chat_id=update.message.chat_id, text='OK. File saved: ' + filename)
     elif receive_command == '/save_users_info':
         filename = VKApiConnector.save_users_info()
+        bot.send_message(chat_id=update.message.chat_id, text='OK. File saved: ' + filename)
+    elif receive_command == '/save_users_additional':
+        filename = VKApiConnector.save_users_additional()
         bot.send_message(chat_id=update.message.chat_id, text='OK. File saved: ' + filename)
 
 

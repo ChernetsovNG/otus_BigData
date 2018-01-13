@@ -29,12 +29,16 @@ def get_data_points():
     users_id_age = {}
     users_info = {}
     users_posts = {}
+    users_additional = {}
 
     with open("data/users_id.json", "r") as file1:
         users_id_age = json.load(file1)
 
     with open("data/users_info.json", "r") as file2:
         users_info = json.load(file2)
+
+    with open("data/users_additional.json", "r") as file3:
+        users_additional = json.load(file3)
 
     for filename in os.listdir("data/extract"):
         with open("data/extract/" + filename, "r") as file:
@@ -55,6 +59,10 @@ def get_data_points():
         if not user_id in users_info:
             continue
         user_info = users_info[user_id]
+
+        if not user_id in users_additional:
+            continue
+        user_additional = users_additional[user_id]
 
         user_count += 1
 
@@ -83,6 +91,10 @@ def get_data_points():
                       'alcohol': user_info['personal']['alcohol'] if
                       ('personal' in user_info and 'alcohol' in user_info['personal']) else None,
                       'verified': user_info['verified'] if 'verified' in user_info else None,
+                      'interests': user_additional['interests'] if 'interests' in user_additional else "",
+                      'movies': user_additional['movies'] if 'movies' in user_additional else "",
+                      'music': user_additional['music'] if 'music' in user_additional else "",
+                      'tv': user_additional['tv'] if 'tv' in user_additional else "",
                       'posts': user_posts}
 
         data_points.append(data_point)

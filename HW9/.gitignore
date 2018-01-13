@@ -112,5 +112,7 @@ venv.bak/
 /data/users_posts.tar.gz
 /data/users_id.json
 /data/users_info.json
+/data/users_additional.json
 /vectorizer.pk
 /learning/*
+/data/extract/
