@@ -5,7 +5,8 @@ START_COMMAND_TEXT = "Hello! My name is VKTextAnalysis_bot. " \
                      "/get_users_posts - получить посты со страниц пользователей; " \
                      "/save_users_id - записать id пользователей в файл; " \
                      "/save_users_info - записать информацию о пользователях в файл; " \
-                     "/save_users_posts - записать посты пользователей в файл"
+                     "/get_users_additional - прочитать файл с id пользователей и собрать для пользователй дополнительную информацию (интересы, любимые фильмы, и т.д.); " \
+                     "/save_users_additional - сохранитель собранную дополнительную информацию в файл"
 
 NOT_A_VK_LINK = "Seems like it is not a vk.com profile or group link. " \
                 "Try again, please."
