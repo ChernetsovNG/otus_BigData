@@ -1,0 +1,50 @@
+buildscript {
+    ext.kotlin_version = '1.2.21'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+group 'ru.nchernetsov'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    // Hadoop dependencies
+    compile group: 'org.apache.hadoop', name: 'hadoop-common', version: '3.0.0'
+    compile group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-core', version: '3.0.0'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin/'
+    test.java.srcDirs += 'src/test/kotlin/'
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': 'WordPairCountKt')
+    }
+    archiveName 'WordPairCount.jar'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}

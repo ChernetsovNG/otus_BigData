@@ -5,3 +5,11 @@ HW8/train.tsv
 HW8/test.tsv
 HW8/sample_submission.csv
 HW10/ml-1m
+HW13/KotlinProject/.gradle
+HW13/KotlinProject/.idea
+HW13/KotlinProject/build
+HW13/KotlinProject/gradle
+HW13/WordPairCount/.gradle
+HW13/WordPairCount/.idea
+HW13/WordPairCount/build
+HW13/WordPairCount/gradle

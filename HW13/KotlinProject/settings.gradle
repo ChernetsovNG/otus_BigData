@@ -1,0 +1,4 @@
+rootProject.name = 'kotlin-hadoop-mapreduce'
+include 'KotlinProject'
+findProject(':KotlinProject')?.name = 'kotlin-hadoop-mapreduce'
+
