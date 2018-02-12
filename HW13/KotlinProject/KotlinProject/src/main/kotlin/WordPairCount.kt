@@ -16,6 +16,9 @@ class WordPairCount {
     // Mapper<KeyIn, ValueIn, KeyOut, ValueOut>
     // файл предобработан так, что в каждой строке - отдельное предложение
     class Map : Mapper<LongWritable, Text, Text, IntWritable>() {
+        val stopwords = listOf("the", "and", "to", "of", "a", "at", "on", "in", "was",
+            "as", "i", "had", "be", "into", "it", "so")
+
         override fun map(key: LongWritable, value: Text, context: Context) {
             val inputSentence = value.toString()
 
@@ -34,9 +37,11 @@ class WordPairCount {
             while (tokenizer.hasMoreTokens()) {
                 sentenceTokens.add(tokenizer.nextToken())
             }
-            // Очищаем слова от несловарных символов и повторяющихся пробелов
+            // Очищаем слова от несловарных символов и повторяющихся пробелов, удаляем стоп-слова
             val clearSentenceTokens = sentenceTokens.map { token -> clearToken(token) } as ArrayList
+            clearSentenceTokens.removeAll(stopwords)
             clearSentenceTokens.remove("")
+
 
             // Составляем все возможные пары слов в предложении, разделённые пробелом
             return getListOfPairs(clearSentenceTokens)
