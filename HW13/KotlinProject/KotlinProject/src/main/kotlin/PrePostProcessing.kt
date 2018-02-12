@@ -66,7 +66,7 @@ fun postprocess() {
     // записываем предложения построчно в текстовый файл
     File(pathToOutputFile).printWriter().use { out ->
         resultByDesc.forEach {
-            out.println("${it.first} : ${it.second.take(10)}")  // запишем только 10 первых пар
+            out.println("${it.first} : ${it.second.take(25)}")  // запишем только 10 первых пар
         }
     }
 }

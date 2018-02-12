@@ -17,7 +17,9 @@ class WordPairCount {
     // файл предобработан так, что в каждой строке - отдельное предложение
     class Map : Mapper<LongWritable, Text, Text, IntWritable>() {
         val stopwords = listOf("the", "and", "to", "of", "a", "at", "on", "in", "was",
-            "as", "i", "had", "be", "into", "it", "so")
+            "as", "i", "had", "be", "into", "it", "so", "she", "her", "you", "would", "this",
+            "for", "that", "its", "them", "then", "do", "with", "get", "got", "if", "or", "he", "his",
+            "did", "there", "dont")
 
         override fun map(key: LongWritable, value: Text, context: Context) {
             val inputSentence = value.toString()
