@@ -55,11 +55,11 @@ class WordPairCount {
 
         private fun getListOfPairs(list: List<String>): List<String> {
             val listOfPairs = ArrayList<String>()
-            for ((index1, word1) in list.withIndex()) {
-                for ((index2, word2) in list.withIndex()) {
-                    if (index1 != index2) {
-                        listOfPairs.add("$word1 $word2")
-                    }
+            for (i in 0 until list.size - 1) {
+                val word1 = list[i]
+                for (j in i + 1 until list.size) {
+                    val word2 = list[j]
+                    listOfPairs.add("$word1 $word2")
                 }
             }
             return listOfPairs
