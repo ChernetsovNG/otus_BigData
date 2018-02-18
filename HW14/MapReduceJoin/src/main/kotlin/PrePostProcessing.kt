@@ -1,6 +1,7 @@
 import PrePostProcessing.getSentenceList
 import PrePostProcessing.getWordPairs
 import java.io.File
+import java.io.FileInputStream
 import java.util.*
 import java.util.regex.Pattern
 import kotlin.collections.ArrayList
@@ -8,8 +9,14 @@ import kotlin.collections.HashMap
 
 fun main(args: Array<String>) {
     // preprocess()
-    postprocess()
+    // postprocess()
+    // writePartMonthTopPairsInFiles()
+    get10000topPairs()
 }
+
+const val pathToResultFolder = "/home/n_chernetsov/Dropbox/Education/Otus_BigData/otus_BigData/HW14/result"
+const val firstMonthResultFile = pathToResultFolder + "/part-r-00000"
+const val pathToFirstMonthResultFolder = pathToResultFolder + "/first_month_top_pairs/"
 
 fun preprocess() {
     val pathToInputFile = "/home/n_chernetsov/Dropbox/Education/Otus_BigData/otus_BigData/HW13/alice30.txt"
@@ -27,47 +34,101 @@ fun preprocess() {
     }
 }
 
+fun writePartMonthTopPairsInFiles() {
+    // т.к. входной файл очень большой, то будем его обрабатывать построчно,
+    // записывая результаты по 10 млн. строк
+    var count = 0L
+    var fileNumber = 1
+    val partMap = HashMap<String, Int>()
+
+    FileInputStream(firstMonthResultFile).use {
+        Scanner(it, "UTF-8").use {
+            while (it.hasNextLine()) {
+                val line = it.nextLine()
+                val tokenizer = StringTokenizer(line, "\t")
+                if (tokenizer.countTokens() == 2) {  // если у нас пара слов и число
+                    val wordPair = tokenizer.nextToken()
+                    val pairCount = Integer.parseInt(tokenizer.nextToken())
+                    partMap.put(wordPair, pairCount)
+                    count++
+                }
+                if (count % 10_000_000 == 0L) {
+                    println("Read $count lines from input file")
+                    val partResult = partMap.toList().sortedByDescending { (_, value) -> value }.take(10_000)
+                    val pathToOutputFile = pathToFirstMonthResultFolder + "part_result_${fileNumber}.txt"
+                    File(pathToOutputFile).printWriter().use { out ->
+                        partResult.forEach {
+                            out.println("${it.first} ${it.second}")
+                        }
+                    }
+                    partMap.clear()
+                    fileNumber++
+                }
+            }
+            if (it.ioException() != null) {
+                throw it.ioException()
+            }
+        }
+    }
+
+    // записываем всё, что осталось
+    val partResult = partMap.toList().sortedByDescending { (_, value) -> value }.take(10_000)
+    val pathToOutputFile = pathToFirstMonthResultFolder + "part_result_${fileNumber}.txt"
+    File(pathToOutputFile).printWriter().use { out ->
+        partResult.forEach {
+            out.println("${it.first} ${it.second}")
+        }
+    }
+    partMap.clear()
+
+    println("Write $fileNumber files. Read $count strings from input file")
+}
+
+fun get10000topPairs() {
+    val partMap = HashMap<String, Int>()
+
+    // Считываем файлы с частичными резульлтатами (по 1000 топ пар из 10 млн. исходных строк)
+    val folder = File(pathToFirstMonthResultFolder)
+    for (file in folder.listFiles()) {
+        file.readLines().forEach {
+            val tokenizer = StringTokenizer(it)
+            val word1 = tokenizer.nextToken()
+            val word2 = tokenizer.nextToken()
+            val wordPair = "$word1 $word2"
+            val pairCount = Integer.parseInt(tokenizer.nextToken())
+            partMap.put(wordPair, pairCount)
+        }
+    }
+
+    // Отбираем 10000 топ пар
+    val result = partMap.toList().sortedByDescending { (_, value) -> value }.take(10_000)
+
+    File(pathToResultFolder + "/first_month_top_pairs.txt").printWriter().use { out ->
+        result.forEach {
+            out.println("${it.first} ${it.second}")
+        }
+    }
+}
+
 fun postprocess() {
-    val pathToResultFolder = "/home/n_chernetsov/Dropbox/Education/Otus_BigData/otus_BigData/HW13/result"
+    val pathToResultFolder = "/home/n_chernetsov/Dropbox/Education/Otus_BigData/otus_BigData/HW14/result"
     val resultFile1 = pathToResultFolder + "/part-r-00000"
-    val resultFile2 = pathToResultFolder + "/part-r-00001"
-    val resultFile3 = pathToResultFolder + "/part-r-00002"
-    val pathToOutputFile = pathToResultFolder + "/top-pairs"
+    val pathToOutputFile = pathToResultFolder + "/first_month_top_pairs"
 
     val pairs1 = getWordPairs(resultFile1)
-    val pairs2 = getWordPairs(resultFile2)
-    val pairs3 = getWordPairs(resultFile3)
 
     val allPairs = HashMap<String, Int>()
     allPairs.putAll(pairs1)
-    allPairs.putAll(pairs2)
-    allPairs.putAll(pairs3)
 
     println("All pairs count: " + allPairs.size)
 
-    // Карта вида <Кол-во раз -> список пар>
-    val countPairsMap = HashMap<Int, ArrayList<String>>()
+    // выбираем первые 10000 пар
+    val result = allPairs.toList().sortedByDescending { (_, value) -> value }.toMap()
 
-    for ((pair, count) in allPairs) {
-        if (!countPairsMap.contains(count)) {
-            countPairsMap.put(count, ArrayList())
-        }
-        val list = countPairsMap[count]
-        list?.add(pair)
-    }
-
-    val result: ArrayList<Pair<Int, List<String>>> = ArrayList()
-    for ((count, listOfPairs) in countPairsMap.toSortedMap()) {
-        result.add(Pair(count, listOfPairs))
-    }
-
-    val resultByDesc = result.reversed()  // сверху будут пары, которых больше всего
 
     // записываем предложения построчно в текстовый файл
     File(pathToOutputFile).printWriter().use { out ->
-        resultByDesc.forEach {
-            out.println("${it.first} : ${it.second.take(25)}")  // запишем только 10 первых пар
-        }
+        // do nothing
     }
 }
 
@@ -88,17 +149,22 @@ object PrePostProcessing {
     // Получить пары и их количества из заданного файла
     fun getWordPairs(inputFile: String): Map<String, Int> {
         val result = HashMap<String, Int>()
-        val lines = File(inputFile).readLines()
-        for (line in lines) {
-            val tokenizer = StringTokenizer(line)
-            if (tokenizer.countTokens() == 3) {  // если у нас пара слов и число
-                val word1 = tokenizer.nextToken()
-                val word2 = tokenizer.nextToken()
-                val wordPair = "$word1 $word2"
-                val pairCount = Integer.parseInt(tokenizer.nextToken())
-                result.put(wordPair, pairCount)
+
+        val bufferedReader = File(inputFile).bufferedReader()
+        bufferedReader.useLines { lines ->
+            lines.forEach {
+                val tokenizer = StringTokenizer(it, "\t")
+                if (tokenizer.countTokens() == 2) {  // если у нас пара слов и число
+                    val wordPair = tokenizer.nextToken()
+                    val pairCount = Integer.parseInt(tokenizer.nextToken())
+                    result.put(wordPair, pairCount)
+                }
+                if (result.size % 10_000_000 == 0) {
+                    println("Read ${result.size} lines from input file")
+                }
             }
         }
+
         return result
     }
 }
