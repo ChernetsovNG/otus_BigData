@@ -43,8 +43,8 @@ sourceSets {
 
 jar {
     manifest {
-        attributes('Main-Class': 'MapReduceJoinKt')
+        attributes('Main-Class': 'MapReduceKt')
     }
-    archiveName 'MapReduceJoin.jar'
+    archiveName 'MapReduce.jar'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
