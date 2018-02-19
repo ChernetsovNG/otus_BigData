@@ -11,7 +11,8 @@ fun main(args: Array<String>) {
     // preprocess()
     // postprocess()
     // writePartMonthTopPairsInFiles()
-    get10000topPairs()
+    // get10000topPairs()
+    // addTabulationTo10000TopPairs()
 }
 
 const val pathToResultFolder = "/home/n_chernetsov/Dropbox/Education/Otus_BigData/otus_BigData/HW14/result"
@@ -106,6 +107,23 @@ fun get10000topPairs() {
     File(pathToResultFolder + "/first_month_top_pairs.txt").printWriter().use { out ->
         result.forEach {
             out.println("${it.first} ${it.second}")
+        }
+    }
+}
+
+// Вставить в качестве разделителя между словами и кол-вом в топ-парах за первый месяц табуляцию
+fun addTabulationTo10000TopPairs() {
+    val lines = File(pathToResultFolder + "/first_month_top_pairs.txt").readLines()
+
+    File(pathToResultFolder + "/first_month_top_pairs_tab.txt").printWriter().use { out ->
+        lines.forEach {
+            val line = it
+            val stringTokenizer = StringTokenizer(line)
+            val word1 = stringTokenizer.nextToken()
+            val word2 = stringTokenizer.nextToken()
+            val count = stringTokenizer.nextToken()
+            val lineWithTab = "$word1 $word2\t$count"  // вставляем в качестве разделителя табуляцию
+            out.println(lineWithTab)
         }
     }
 }
