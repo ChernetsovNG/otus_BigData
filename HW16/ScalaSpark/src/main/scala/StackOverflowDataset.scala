@@ -1,6 +1,9 @@
-// sbt package
-// spark-submit --class "StackOverflowDataset" target/scala-2.11/simple-project_2.11-1.0.jar gs://otusspark/data/stackoverflow/Train.csv gs://otusspark/data_output/stackoverflow_dataset
 
+
+
+
+
+// spark-submit --class "StackOverflowDataset" target/scala-2.11/simple-project_2.11-1.0.jar gs://otusspark/data/stackoverflow/Train.csv gs://otusspark/data_output/stackoverflow_dataset
 
 object StackOverflowDataset {
   def main(args: Array[String]) {
@@ -14,7 +17,6 @@ object StackOverflowDataset {
     val outputTitles = "gs://otusspark/data_output/stackoverflow_titles_languages"
     val outputDatasetPath = "gs://otusspark/data_output/stackoverflow_dataset_count"
 
-    // https://github.com/apache/spark/blob/master/sql/core/src/main/scala/org/apache/spark/sql/DataFrameReader.scala
     val stackOverflowDF = spark.read.format("csv").option("header", "true").option("escape", "\"").option("multiLine", "true").load(inputFile)
     val languages = Set("javascript", "java", "python", "ruby", "php", "c++", "c#", "go", "scala", "swift")
 
