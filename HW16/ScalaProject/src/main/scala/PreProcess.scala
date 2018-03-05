@@ -1,4 +1,7 @@
 
+import java.net.URI
+
+import org.apache.hadoop.fs.{FileSystem, Path}
 import org.apache.spark.ml.feature.{CountVectorizer, CountVectorizerModel, RegexTokenizer, StopWordsRemover}
 import org.apache.spark.sql.expressions.UserDefinedFunction
 import org.apache.spark.sql.functions.{col, split, udf}
@@ -39,10 +42,10 @@ object PreProcess extends Serializable {
     // Оставляем вместо имени языка его индекс - целевой признак
     val stackOverflowDSIndexed = stackOverflowDFTagsLengthFiltered
       .withColumn("label", getLanguageIndex(col("Tag")))
-      .drop("TagsArray").drop("Tags").drop("Body").drop("TagsFiltered").drop("TagsLength").drop("Tag")
+      .drop("TagsArray").drop("Tags").drop("TagsFiltered").drop("TagsLength").drop("Tag")
 
-    // Разбиваем столбец Title на отдельные слова, удаляем стоп-слова
-    val regexTokenizer = new RegexTokenizer().setInputCol("Title").setOutputCol("words").setPattern("\\W")
+    // Разбиваем столбцы Title и Body на отдельные слова, удаляем стоп-слова
+    val regexTokenizer = new RegexTokenizer().setInputCol("Title").setInputCol("Body").setOutputCol("words").setPattern("\\W")
     val remover = new StopWordsRemover().setInputCol("words").setOutputCol("wordsFiltered")
 
     val regexTokenized = regexTokenizer.transform(stackOverflowDSIndexed)
@@ -55,9 +58,12 @@ object PreProcess extends Serializable {
       .fit(regexTokenizedFiltered)
 
     val dataset = cvModel.transform(regexTokenizedFiltered)
-      .drop("Title").drop("words").drop("wordsFiltered")
+      .drop("Title").drop("Body").drop("words").drop("wordsFiltered")
       .withColumn("labelInt", $"label".cast(IntegerType)).drop("label").withColumnRenamed("labelInt", "label")
 
+    // Удаляем файл, если он уже был
+    val fs = FileSystem.get(new URI(StackOverflowDataset.outputFolder), sparkSession.sparkContext.hadoopConfiguration)
+    fs.delete(new Path(StackOverflowDataset.outputDatasetPath), true)
     dataset.write.format("json").save(StackOverflowDataset.outputDatasetPath)
 
     dataset

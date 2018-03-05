@@ -22,15 +22,7 @@ HW14/MapReduceJoin/build
 HW14/MapReduceJoin/gradle
 HW14/MapReduceJoin/out
 HW14/result/part-r-00000
-HW16/KotlinSpark/.idea
-HW16/KotlinSpark/.gradle
-HW16/KotlinSpark/build
-HW16/KotlinSpark/KotlinSpark.iml
 HW16/data
-HW16/ScalaSpark/.idea
-HW16/ScalaSpark/ScalaSpark.iml
-HW16/ScalaSpark/project
-HW16/ScalaSpark/target
 HW16/ScalaProject/.idea
 HW16/ScalaProject/project/target
 HW16/ScalaProject/target

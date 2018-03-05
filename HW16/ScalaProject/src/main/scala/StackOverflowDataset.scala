@@ -5,6 +5,7 @@ object StackOverflowDataset extends Serializable {
   // Пути к файлам на HDFS
   val inputFile = "hdfs://localhost:9000/HW16/data/Train.csv"
   val outputTitles = "hdfs://localhost:9000/HW16/output/stackoverflow_titles_languages"
+  val outputFolder = "hdfs://localhost:9000/HW16/output/"
   val outputDatasetPath = "hdfs://localhost:9000/HW16/output/stackoverflow_dataset_count"
 
   // Языки программирования в тегах - целевые переменные
@@ -13,12 +14,13 @@ object StackOverflowDataset extends Serializable {
 
 
   // Пример запуска в Spark
-  // sbt package
-  // spark-submit --class "StackOverflowDataset" /home/n_chernetsov/Dropbox/Education/Otus_BigData/otus_BigData/HW16/ScalaProject/target/scala-2.11/scalaproject_2.11-0.1.jar
+  // sbt clean package
+  // spark-submit --class "StackOverflowDataset" --driver-memory 5g /home/n_chernetsov/Dropbox/Education/Otus_BigData/otus_BigData/HW16/ScalaProject/target/scala-2.11/scalaproject_2.11-0.1.jar
   def main(args: Array[String]) {
     val sparkSession = createSparkSession("StackOverflowCreateDataset")
     val dataset = PreProcess.prepareDataset(sparkSession)
-    MLModel.createModelAndPredict(dataset)
+    // MLModel.createModelAndPredict(dataset, ModelType.LOGISTIC_REGRESSION)
+    MLModel.createModelAndPredict(dataset, ModelType.RANDOM_FOREST)
     sparkSession.stop()
   }
 
@@ -27,5 +29,3 @@ object StackOverflowDataset extends Serializable {
     SparkSession.builder().appName(appName).getOrCreate()
 
 }
-
-
