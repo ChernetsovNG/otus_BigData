@@ -1,0 +1,258 @@
+Количество точных совпадений: 247 (49.30139720558882%)
+Количество несовпадений: 254. Среднее относительное расстояние редактирования: 0.9105927110208599
+
+Несовпадения распознавания и оригинальной транскрипции: 
+original: да, prediction: нда пк, file_number: 706, rel_edit_distance: 2.0
+original: нет, prediction: нетдле дмдды, file_number: 707, rel_edit_distance: 3.0
+original: да, prediction: дал, file_number: 708, rel_edit_distance: 0.5
+original: да, prediction: даи, file_number: 712, rel_edit_distance: 0.5
+original: нет, prediction: , file_number: 715, rel_edit_distance: 1.0
+original: да, prediction: дан, file_number: 716, rel_edit_distance: 0.5
+original: да, prediction: дал, file_number: 722, rel_edit_distance: 0.5
+original: да, prediction: ид оас, file_number: 723, rel_edit_distance: 2.0
+original: да, prediction: бдахурд, file_number: 728, rel_edit_distance: 2.5
+original: да, prediction: имедичк зара ти, file_number: 731, rel_edit_distance: 6.5
+original: да, prediction: дас ка, file_number: 733, rel_edit_distance: 2.0
+original: нет не интересно, prediction: недн ноен ясноа, file_number: 734, rel_edit_distance: 0.5625
+original: да, prediction: дас, file_number: 737, rel_edit_distance: 0.5
+original: да, prediction: дадмле, file_number: 739, rel_edit_distance: 2.0
+original: да, prediction: дат, file_number: 740, rel_edit_distance: 0.5
+original: да да интере, prediction: а одасиви коли, file_number: 743, rel_edit_distance: 0.8333333333333334
+original: нет, prediction: схнетрн, file_number: 747, rel_edit_distance: 1.3333333333333333
+original: нет, prediction: нет скохоро, file_number: 749, rel_edit_distance: 2.6666666666666665
+original: нет, prediction: снет, file_number: 1004, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нетрю, file_number: 1006, rel_edit_distance: 0.6666666666666666
+original: да, prediction: оня кл, file_number: 1009, rel_edit_distance: 3.0
+original: да, prediction: дас, file_number: 1012, rel_edit_distance: 0.5
+original: нет, prediction: нетас, file_number: 1013, rel_edit_distance: 0.6666666666666666
+original: ну да, prediction: да, file_number: 1014, rel_edit_distance: 0.6
+original: да, prediction: дали, file_number: 1022, rel_edit_distance: 1.0
+original: нажмите четыре, prediction: нажеметечетоё, file_number: 1029, rel_edit_distance: 0.42857142857142855
+original: да я зарегистри, prediction: да ме поледистое, file_number: 1030, rel_edit_distance: 0.5333333333333333
+original: да, prediction: дачно, file_number: 1031, rel_edit_distance: 1.5
+original: да, prediction: даки м, file_number: 1033, rel_edit_distance: 2.0
+original: да, prediction: дах, file_number: 1035, rel_edit_distance: 0.5
+original: нет нет, prediction: нет енет, file_number: 1036, rel_edit_distance: 0.14285714285714285
+original: да, prediction: даи, file_number: 1038, rel_edit_distance: 0.5
+original: нет, prediction: нет нии, file_number: 1039, rel_edit_distance: 1.3333333333333333
+original: да, prediction: дам, file_number: 1042, rel_edit_distance: 0.5
+original: да, prediction: даа, file_number: 1045, rel_edit_distance: 0.5
+original: да да, prediction: дал гда, file_number: 1048, rel_edit_distance: 0.4
+original: нет, prediction: неттокаата, file_number: 1050, rel_edit_distance: 2.3333333333333335
+original: в данный момент пока не знаю, prediction: нданный момент пока не знаю, file_number: 1052, rel_edit_distance: 0.07142857142857142
+original: нет, prediction: кнет, file_number: 1056, rel_edit_distance: 0.3333333333333333
+original: не особо, prediction: несобо, file_number: 1058, rel_edit_distance: 0.25
+original: нет, prediction: ну, file_number: 1060, rel_edit_distance: 0.6666666666666666
+original: ну да, prediction: а даля, file_number: 1061, rel_edit_distance: 0.8
+original: нет, prediction: ед, file_number: 1062, rel_edit_distance: 0.6666666666666666
+original: нет, prediction: нев, file_number: 1063, rel_edit_distance: 0.3333333333333333
+original: да, prediction: дамуод, file_number: 1064, rel_edit_distance: 2.0
+original: нет, prediction: нетассто оя, file_number: 1065, rel_edit_distance: 2.6666666666666665
+original: нет, prediction: н десосонввта, file_number: 1066, rel_edit_distance: 3.3333333333333335
+original: да, prediction: егс сожщи, file_number: 1067, rel_edit_distance: 4.5
+original: да или нет, prediction: даиние, file_number: 1068, rel_edit_distance: 0.5
+original: нет, prediction: неет, file_number: 1070, rel_edit_distance: 0.3333333333333333
+original: нет до свидания, prediction: нет до севидани, file_number: 1071, rel_edit_distance: 0.13333333333333333
+original: да нет конечно и вообще разговаривать, prediction: ос нет коненой гокно дзали, file_number: 1073, rel_edit_distance: 0.5405405405405406
+original: нет, prediction: ннет, file_number: 1074, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: мнемих х, file_number: 1075, rel_edit_distance: 2.0
+original: мне не удобно вообще щ, prediction: мне не догре е щи, file_number: 1076, rel_edit_distance: 0.45454545454545453
+original: да, prediction: дам, file_number: 1078, rel_edit_distance: 0.5
+original: нет нет, prediction: нет нек, file_number: 1080, rel_edit_distance: 0.14285714285714285
+original: пасибо нет, prediction: сибо нет, file_number: 1082, rel_edit_distance: 0.2
+original: нет не приходилось, prediction: вененетдаби коло, file_number: 1083, rel_edit_distance: 0.7222222222222222
+original: пока не готов, prediction: гпока не г то, file_number: 1084, rel_edit_distance: 0.23076923076923078
+original: нет, prediction: не, file_number: 1087, rel_edit_distance: 0.3333333333333333
+original: не готов, prediction: унет в не ге то, file_number: 1089, rel_edit_distance: 1.25
+original: перезвоните пожалуйста, prediction: а акноачи презнонити папа, file_number: 1090, rel_edit_distance: 0.9090909090909091
+original: искуственный интеллект у нас суды по вам не закончились ёб твою медь а, prediction: скуственый интеллет нас сды повам не зыкончили ё тво медь, file_number: 1091, rel_edit_distance: 0.2
+original: нет, prediction: нетд в, file_number: 1093, rel_edit_distance: 1.0
+original: да, prediction: дат, file_number: 1094, rel_edit_distance: 0.5
+original: нет не при, prediction: нетанибы, file_number: 1096, rel_edit_distance: 0.6
+original: нет, prediction: нет чш, file_number: 1097, rel_edit_distance: 1.0
+original: нет, prediction: анеетоабло, file_number: 1098, rel_edit_distance: 2.3333333333333335
+original: пока нет, prediction: пока нит, file_number: 1099, rel_edit_distance: 0.125
+original: нет, prediction: нетть, file_number: 1100, rel_edit_distance: 0.6666666666666666
+original: нет не приходилось, prediction: нет ей приходиже, file_number: 1, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нт, file_number: 2, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нетк, file_number: 3, rel_edit_distance: 0.3333333333333333
+original: нет нет, prediction: нет не, file_number: 4, rel_edit_distance: 0.14285714285714285
+original: нет, prediction: нетй, file_number: 5, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нетолхо, file_number: 6, rel_edit_distance: 1.3333333333333333
+original: аа нет, prediction: а нел, file_number: 7, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нета, file_number: 8, rel_edit_distance: 0.3333333333333333
+original: да дындымны, prediction: дадередо мне, file_number: 9, rel_edit_distance: 0.6363636363636364
+original: а нет, prediction: ванет, file_number: 12, rel_edit_distance: 0.4
+original: нет, prediction: нета, file_number: 15, rel_edit_distance: 0.3333333333333333
+original: пока нет, prediction: по канат, file_number: 16, rel_edit_distance: 0.375
+original: нет пока, prediction: нет пака, file_number: 19, rel_edit_distance: 0.125
+original: нет, prediction: нет з, file_number: 20, rel_edit_distance: 0.6666666666666666
+original: с искусственным интеллектом встретиться ха ха интересно, prediction: с искуссвенны ителлетом встреить хаха итересно, file_number: 21, rel_edit_distance: 0.16363636363636364
+original: нет, prediction: нунт, file_number: 22, rel_edit_distance: 0.6666666666666666
+original: нет, prediction: не, file_number: 25, rel_edit_distance: 0.3333333333333333
+original: мне некогда девушка, prediction: ене некгдодежско, file_number: 26, rel_edit_distance: 0.42105263157894735
+original: нет, prediction: нетт, file_number: 30, rel_edit_distance: 0.3333333333333333
+original: а у меня бизнеса нету, prediction: а мя бизнокомнат, file_number: 31, rel_edit_distance: 0.47619047619047616
+original: да, prediction: дад, file_number: 32, rel_edit_distance: 0.5
+original: нет, prediction: нет а, file_number: 34, rel_edit_distance: 0.6666666666666666
+original: нет, prediction: нетк, file_number: 35, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: танет, file_number: 36, rel_edit_distance: 0.6666666666666666
+original: нет, prediction: нето, file_number: 37, rel_edit_distance: 0.3333333333333333
+original: нет конечно, prediction: нет кож, file_number: 40, rel_edit_distance: 0.45454545454545453
+original: готовы, prediction: готов, file_number: 41, rel_edit_distance: 0.16666666666666666
+original: нет спасибо, prediction: нет споссибо, file_number: 43, rel_edit_distance: 0.18181818181818182
+original: нет, prediction: знет, file_number: 44, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нет ст х, file_number: 45, rel_edit_distance: 1.6666666666666667
+original: нет что это такое, prediction: но от ит то т кла, file_number: 46, rel_edit_distance: 0.5294117647058824
+original: искусственный интеллект нет не приходилось искусственный интеллект, prediction: искоуснняйтрет нетне приходилоьчиспузибути ак, file_number: 47, rel_edit_distance: 0.5151515151515151
+original: нет к сожалению, prediction: ен жжея нх, file_number: 48, rel_edit_distance: 0.7333333333333333
+original: нет, prediction: ржуло о онет в, file_number: 1204, rel_edit_distance: 3.6666666666666665
+original: нет, prediction: нетк, file_number: 1207, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нета, file_number: 1208, rel_edit_distance: 0.3333333333333333
+original: не знаю, prediction: не заю, file_number: 1210, rel_edit_distance: 0.14285714285714285
+original: да приходилось, prediction: дак еходелли, file_number: 1211, rel_edit_distance: 0.5714285714285714
+original: нет не интерес, prediction: нетнмейн пер, file_number: 1212, rel_edit_distance: 0.5714285714285714
+original: нет, prediction: нета, file_number: 1213, rel_edit_distance: 0.3333333333333333
+original: нет не приходилось, prediction: нет уприхали хо, file_number: 1214, rel_edit_distance: 0.5
+original: нет пока не, prediction: нет покомне, file_number: 1215, rel_edit_distance: 0.18181818181818182
+original: нет, prediction: не, file_number: 1219, rel_edit_distance: 0.3333333333333333
+original: не ни разу, prediction: меди разух, file_number: 1221, rel_edit_distance: 0.4
+original: ну я ни разу не видел инь, prediction: не нераввелу и, file_number: 1222, rel_edit_distance: 0.64
+original: нет, prediction: нет с, file_number: 1223, rel_edit_distance: 0.6666666666666666
+original: нет, prediction: н, file_number: 1224, rel_edit_distance: 0.6666666666666666
+original: да, prediction: да прему, file_number: 1226, rel_edit_distance: 3.0
+original: нет не приходилось, prediction: тнесрикихоли лш, file_number: 1230, rel_edit_distance: 0.6666666666666666
+original: нет, prediction: нетце, file_number: 1231, rel_edit_distance: 0.6666666666666666
+original: у нас уже есть расчётный счёт пока мы не готовы, prediction: у нас же есть ращётны чёд покамы неготовы, file_number: 1235, rel_edit_distance: 0.1702127659574468
+original: у меня нет бизнеса, prediction: ненне бизнод и дыз, file_number: 1239, rel_edit_distance: 0.7777777777777778
+original: нет, prediction: дт, file_number: 1241, rel_edit_distance: 0.6666666666666666
+original: когда с искусственной женщиной не спал, prediction: огда с искусственной женщиной не спал, file_number: 1242, rel_edit_distance: 0.02631578947368421
+original: нет, prediction: нетбз, file_number: 1244, rel_edit_distance: 0.6666666666666666
+original: нет с искусственной му, prediction: нет бокоустве не мой, file_number: 1245, rel_edit_distance: 0.5
+original: с роботами да не люблю разговаривать с ор с роботами, prediction: с роботами да неубрлёглоурисвомт сорокуто, file_number: 1246, rel_edit_distance: 0.4807692307692308
+original: нет, prediction: нет ну, file_number: 1247, rel_edit_distance: 1.0
+original: хорошая нет нет нет, prediction: хорошая нет с не нео, file_number: 1248, rel_edit_distance: 0.21052631578947367
+original: нет, prediction: нет оска, file_number: 501, rel_edit_distance: 1.6666666666666667
+original: нет, prediction: нетуе сто, file_number: 502, rel_edit_distance: 2.0
+original: да, prediction: о, file_number: 506, rel_edit_distance: 1.0
+original: интересно, prediction: лонаи тере, file_number: 515, rel_edit_distance: 0.8888888888888888
+original: да, prediction: инодаоч и пр, file_number: 516, rel_edit_distance: 5.0
+original: да, prediction: дажато оса, file_number: 524, rel_edit_distance: 4.0
+original: нет спасибо, prediction: нет спадим х, file_number: 525, rel_edit_distance: 0.36363636363636365
+original: нет, prediction: нета, file_number: 530, rel_edit_distance: 0.3333333333333333
+original: да, prediction: дап, file_number: 531, rel_edit_distance: 0.5
+original: да, prediction: дан, file_number: 535, rel_edit_distance: 0.5
+original: нет, prediction: нетл, file_number: 536, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нетс, file_number: 541, rel_edit_distance: 0.3333333333333333
+original: интересно, prediction: интеда, file_number: 543, rel_edit_distance: 0.5555555555555556
+original: не интересно, prediction: недерено, file_number: 552, rel_edit_distance: 0.4166666666666667
+original: нет, prediction: раахи но нетатв, file_number: 554, rel_edit_distance: 4.0
+original: нет спасибо, prediction: нет спассигог ви, file_number: 558, rel_edit_distance: 0.5454545454545454
+original: да, prediction: да мо, file_number: 563, rel_edit_distance: 1.5
+original: да, prediction: дахо, file_number: 566, rel_edit_distance: 1.0
+original: нет, prediction: нетн в, file_number: 568, rel_edit_distance: 1.0
+original: нет, prediction: нетма, file_number: 569, rel_edit_distance: 0.6666666666666666
+original: да, prediction: дакубылагниетбы, file_number: 571, rel_edit_distance: 6.5
+original: нет, prediction: нетк, file_number: 572, rel_edit_distance: 0.3333333333333333
+original: да, prediction: дас, file_number: 573, rel_edit_distance: 0.5
+original: нет, prediction: эал детму гогя кктиа, file_number: 575, rel_edit_distance: 6.0
+original: да, prediction: дан, file_number: 578, rel_edit_distance: 0.5
+original: нет, prediction: нет пр, file_number: 579, rel_edit_distance: 1.0
+original: нет спасибо, prediction: нет повиба, file_number: 581, rel_edit_distance: 0.36363636363636365
+original: нет, prediction: не, file_number: 588, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: днет, file_number: 590, rel_edit_distance: 0.3333333333333333
+original: да, prediction: да оис, file_number: 594, rel_edit_distance: 2.0
+original: нет, prediction: нетд, file_number: 597, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нат, file_number: 598, rel_edit_distance: 0.3333333333333333
+original: да, prediction: дайм, file_number: 599, rel_edit_distance: 1.0
+original: да, prediction: да ужнк, file_number: 600, rel_edit_distance: 2.5
+original: нет, prediction: ет, file_number: 1347, rel_edit_distance: 0.3333333333333333
+original: пока нет, prediction: нпоканео чш, file_number: 1348, rel_edit_distance: 0.75
+original: вёл себя не хорошо, prediction: ёл себя ни хо рошосрая, file_number: 1350, rel_edit_distance: 0.3888888888888889
+original: нет, prediction: ынетп, file_number: 1352, rel_edit_distance: 0.6666666666666666
+original: нет, prediction: гонет, file_number: 1355, rel_edit_distance: 0.6666666666666666
+original: спасибо не, prediction: пасил о гялай неты, file_number: 1356, rel_edit_distance: 1.1
+original: да, prediction: ю сачт с, file_number: 1358, rel_edit_distance: 3.5
+original: нет не готов, prediction: пнетноно горов, file_number: 1363, rel_edit_distance: 0.4166666666666667
+original: нет ничего не приходь, prediction: нео ночелони пихо, file_number: 1364, rel_edit_distance: 0.38095238095238093
+original: нет не приходилось, prediction: т н плдаеа, file_number: 1365, rel_edit_distance: 0.6666666666666666
+original: мне сейчас не совсем удобно, prediction: неяч с т ни коктемо пумном, file_number: 1366, rel_edit_distance: 0.6666666666666666
+original: до свидания, prediction: длесвми даиа ли, file_number: 1368, rel_edit_distance: 0.8181818181818182
+original: нет ни разу, prediction: мв неет не разу, file_number: 1372, rel_edit_distance: 0.45454545454545453
+original: нет спасибо, prediction: нет спатструл, file_number: 1373, rel_edit_distance: 0.45454545454545453
+original: ну пока нет, prediction: не поанет, file_number: 1374, rel_edit_distance: 0.2727272727272727
+original: нет не приходилось и не хочу, prediction: нет не прихонилось мехоча, file_number: 1375, rel_edit_distance: 0.21428571428571427
+original: дальше, prediction: да, file_number: 1376, rel_edit_distance: 0.6666666666666666
+original: дальше, prediction: дальши, file_number: 1377, rel_edit_distance: 0.16666666666666666
+original: нет, prediction: нетлот ужонк, file_number: 1382, rel_edit_distance: 3.0
+original: нет, prediction: нета, file_number: 1383, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нетэ, file_number: 1384, rel_edit_distance: 0.3333333333333333
+original: говорите дальше адель, prediction: сговолие даше одаы, file_number: 1386, rel_edit_distance: 0.42857142857142855
+original: мне это не нужно, prediction: не мемунас, file_number: 1389, rel_edit_distance: 0.6875
+original: нет, prediction: не, file_number: 1390, rel_edit_distance: 0.3333333333333333
+original: нет у меня нет бизнеса, prediction: оек беня тбилитса, file_number: 1392, rel_edit_distance: 0.5
+original: нет спасибо, prediction: нет дощибом, file_number: 1393, rel_edit_distance: 0.45454545454545453
+original: да я не помню, prediction: дай нопом, file_number: 1394, rel_edit_distance: 0.46153846153846156
+original: да или нет, prediction: далинет, file_number: 1395, rel_edit_distance: 0.3
+original: нет, prediction: , file_number: 1396, rel_edit_distance: 1.0
+original: нет, prediction: нетц, file_number: 1397, rel_edit_distance: 0.3333333333333333
+original: нет нет нет, prediction: нет неяткту, file_number: 1399, rel_edit_distance: 0.45454545454545453
+original: да, prediction: дах бе, file_number: 1404, rel_edit_distance: 2.0
+original: нет конечно, prediction: нек ка мавтая, file_number: 1405, rel_edit_distance: 0.8181818181818182
+original: а я не помню даже, prediction: саи не помно ралн можги, file_number: 1406, rel_edit_distance: 0.7058823529411765
+original: нет, prediction: ет, file_number: 1408, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нет з, file_number: 1409, rel_edit_distance: 0.6666666666666666
+original: к сожалению нет адель, prediction: ссожление не тпода, file_number: 1410, rel_edit_distance: 0.47619047619047616
+original: нет, prediction: неет, file_number: 1411, rel_edit_distance: 0.3333333333333333
+original: мне некогда короче, prediction: не некода ко, file_number: 1414, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нет е, file_number: 1415, rel_edit_distance: 0.6666666666666666
+original: нет адель, prediction: не отодале гоава, file_number: 1419, rel_edit_distance: 1.2222222222222223
+original: нет, prediction: нет н, file_number: 1422, rel_edit_distance: 0.6666666666666666
+original: нет, prediction: неткок, file_number: 1424, rel_edit_distance: 1.0
+original: нет спасибо до свидания, prediction: нек ф осе ла дгоколька, file_number: 1426, rel_edit_distance: 0.7391304347826086
+original: нет не приходилось, prediction: сенет ни пряхокдуло, file_number: 1429, rel_edit_distance: 0.4444444444444444
+original: нет бизнеса нет, prediction: кненет менуссля ня, file_number: 1430, rel_edit_distance: 0.8
+original: не знаю, prediction: ненаю, file_number: 1431, rel_edit_distance: 0.2857142857142857
+original: нет не приходилось, prediction: нет не рихони уо, file_number: 1432, rel_edit_distance: 0.3333333333333333
+original: пока нет, prediction: покра нет, file_number: 1433, rel_edit_distance: 0.125
+original: да нет, prediction: да нето, file_number: 1434, rel_edit_distance: 0.16666666666666666
+original: да постоянно, prediction: о потло нлу, file_number: 1435, rel_edit_distance: 0.5833333333333334
+original: нет, prediction: нет х, file_number: 1437, rel_edit_distance: 0.6666666666666666
+original: нет, prediction: етно, file_number: 1438, rel_edit_distance: 1.0
+original: да нет наверное, prediction: даненан, file_number: 1439, rel_edit_distance: 0.5333333333333333
+original: нет, prediction: инане оужизыо, file_number: 1440, rel_edit_distance: 3.6666666666666665
+original: нет, prediction: нет н, file_number: 1441, rel_edit_distance: 0.6666666666666666
+original: нет нет нет, prediction: на днет нет, file_number: 1444, rel_edit_distance: 0.2727272727272727
+original: нет не приходилось, prediction: нет неприхадинили х, file_number: 200, rel_edit_distance: 0.3888888888888889
+original: на спасибо пока нет, prediction: нд спа ебаг пока нет ржепорарсц, file_number: 201, rel_edit_distance: 0.8421052631578947
+original: нет, prediction: нет рии, file_number: 202, rel_edit_distance: 1.3333333333333333
+original: нет, prediction: метс, file_number: 204, rel_edit_distance: 0.6666666666666666
+original: нет пока не, prediction: нет пкамне, file_number: 205, rel_edit_distance: 0.18181818181818182
+original: нет, prediction: на, file_number: 206, rel_edit_distance: 0.6666666666666666
+original: нет слава богу, prediction: нет солбоко, file_number: 210, rel_edit_distance: 0.5
+original: нет не приходилось, prediction: нет неходел еж, file_number: 211, rel_edit_distance: 0.4444444444444444
+original: нет, prediction: надга а я бта бол, file_number: 212, rel_edit_distance: 5.0
+original: нет, prediction: нет как, file_number: 213, rel_edit_distance: 1.3333333333333333
+original: нет, prediction: нетя, file_number: 214, rel_edit_distance: 0.3333333333333333
+original: пока нет, prediction: пока небе, file_number: 215, rel_edit_distance: 0.25
+original: нет, prediction: нет с, file_number: 218, rel_edit_distance: 0.6666666666666666
+original: нет спасибо, prediction: нет спасчибо, file_number: 219, rel_edit_distance: 0.09090909090909091
+original: приходилось, prediction: иходлаь, file_number: 222, rel_edit_distance: 0.45454545454545453
+original: нет, prediction: убне у т, file_number: 223, rel_edit_distance: 1.6666666666666667
+original: у меня нет никакого би, prediction: оне нехт никоко о ви, file_number: 225, rel_edit_distance: 0.4090909090909091
+original: нет, prediction: внет, file_number: 226, rel_edit_distance: 0.3333333333333333
+original: нет, prediction: нет к, file_number: 227, rel_edit_distance: 0.6666666666666666
+original: нет, prediction: вканет куз, file_number: 228, rel_edit_distance: 2.3333333333333335
+original: я не готов встреть, prediction: я не гоков тойо, file_number: 230, rel_edit_distance: 0.3888888888888889
+original: не знаю, prediction: не зна, file_number: 232, rel_edit_distance: 0.14285714285714285
+original: нет, prediction: тметую, file_number: 233, rel_edit_distance: 1.3333333333333333
+original: мне это не интересно, prediction: гомнене ин езм, file_number: 236, rel_edit_distance: 0.65
+original: нет, prediction: снетд, file_number: 237, rel_edit_distance: 0.6666666666666666
+original: нет некогда мне, prediction: нет мнекогдони, file_number: 238, rel_edit_distance: 0.3333333333333333
+original: ха нет, prediction: нет горинин ирона, file_number: 241, rel_edit_distance: 2.5
+original: не приходилось, prediction: не прихалито, file_number: 242, rel_edit_distance: 0.35714285714285715
+original: нет ну щас не, prediction: неного ужжажний, file_number: 243, rel_edit_distance: 0.8461538461538461
+original: нет не приходилось, prediction: нети пханкаг, file_number: 244, rel_edit_distance: 0.6666666666666666
+original: нет, prediction: нетожче, file_number: 246, rel_edit_distance: 1.3333333333333333
+original: хочу нет, prediction: ачт нет, file_number: 247, rel_edit_distance: 0.375
+original: нет, prediction: ешногужнетм, file_number: 248, rel_edit_distance: 2.6666666666666665
