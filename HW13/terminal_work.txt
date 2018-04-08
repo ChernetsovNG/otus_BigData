@@ -1,0 +1,23 @@
+# 1. Разбиваем исходный текст "Алисы" на 3 части
+split -l 550 alice30_prep.txt
+
+# 2. Кладём файлы в hdfs
+hadoop fs -put ./alice30_prep_* /data/word_pair_count
+hadoop fs -ls /data/word_pair_count
+2018-02-11 13:19:19,628 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 3 items
+-rw-r--r--   1 root supergroup      53971 2018-02-11 17:40 /data/word_pair_count/alice30_prep_1.txt
+-rw-r--r--   1 root supergroup      47509 2018-02-11 17:40 /data/word_pair_count/alice30_prep_2.txt
+-rw-r--r--   1 root supergroup      43467 2018-02-11 17:40 /data/word_pair_count/alice30_prep_3.txt
+
+# 3. Собираем jar-файл из проекта
+gradle clean build
+
+# 4. Запускаем jar-файл (с указанием количества редьюсеров (1 - по умолчанию))
+hadoop jar /home/n_chernetsov/Dropbox/Education/Otus_BigData/otus_BigData/HW13/KotlinProject/KotlinProject/build/libs/WordPairCount.jar /data/word_pair_count /data/output 3
+
+# 5. Копируем результат работы с hdfs
+hadoop fs -get /data/output/* /home/n_chernetsov/Dropbox/Education/Otus_BigData/otus_BigData/HW13/result
+sudo chown -R n_chernetsov:n_chernetsov result
+
+
